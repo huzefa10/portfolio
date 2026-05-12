@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Huzefa Merchant — ML Engineer | GenAI · Multimodal AI · Computer Vision</title>
+  <meta name="description" content="Huzefa Merchant is an ML Engineer specializing in GenAI, Multimodal AI, and Computer Vision. Creator of LensToWords — image captioning through 7 architecture iterations achieving BLEU-4: 0.1341 on MSCOCO.">
+  <meta name="keywords" content="Huzefa Merchant, ML Engineer, Machine Learning, Deep Learning, GenAI, Multimodal AI, Computer Vision, LensToWords, Image Captioning, PyTorch, TensorFlow, ConvNeXt, Perceiver, GPT-2">
+  <meta name="author" content="Huzefa Merchant">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Huzefa Merchant — ML Engineer | GenAI · Multimodal AI · Computer Vision">
+  <meta property="og:description" content="ML Engineer specializing in GenAI, Multimodal AI, and Computer Vision. Creator of LensToWords — image captioning rebuilt 7 times.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://huzefamerchant.dev">
+  <meta property="og:image" content="assets/huzefa.JPG">
+  <meta property="og:site_name" content="Huzefa Merchant">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Huzefa Merchant — ML Engineer">
+  <meta name="twitter:description" content="ML Engineer specializing in GenAI, Multimodal AI, and Computer Vision. Creator of LensToWords.">
+  <meta name="twitter:image" content="assets/huzefa.JPG">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/playfair-display/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/plus-jakarta-sans/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono/index.css">
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#FAFAF8;--tx:#111;--tx2:#666;--tx3:#999;--gd:#C4943A;--bd:#e8e8e8;--hv:#fff9f0;
+      --fs:'Playfair Display',Georgia,serif;--fb:'Plus Jakarta Sans',system-ui,sans-serif;--fm:'IBM Plex Mono',monospace}
+
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);overflow-x:hidden}
+
+    #main{position:relative;background:var(--bg);min-height:100vh;overflow-x:hidden}
+    #cb{position:absolute;top:0;left:0;z-index:0;pointer-events:none}
+    #cl{position:relative;z-index:1}
+
+    /* NAV */
+    .hd{position:sticky;top:0;z-index:99;background:rgba(250,250,248,.97);border-bottom:1px solid var(--bd);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:52px}
+    .hl{display:flex;align-items:center;gap:10px}
+    /*.bg{width:30px;height:30px;border-radius:50%;background:#111;display:flex;align-items:center;justify-content:center;font-family:var(--fs);font-size:11px;color:#fff;font-weight:600;flex-shrink:0}*/
+	.bg{width:30px;height:30px;border-radius:50%;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#111;}
+	.bg img{width:100%;height:100%;object-fit:cover;display:block;}
+    .nb{font-family:var(--fb);font-size:16px;color:var(--tx);font-weight:500}
+    .cu{animation:bk .9s step-end infinite;color:var(--gd)}
+    @keyframes bk{50%{opacity:0}}
+    .nl{display:flex;gap:16px;list-style:none}
+    .nl a{font-family:var(--fb);font-size:16px;color:var(--tx2);text-decoration:none;cursor:pointer;transition:color .15s}
+    .nl a:hover{color:var(--tx)}
+    .sg{font-family:var(--fb)!important;font-size:16px!important;color:var(--gd)!important;letter-spacing:.04em}
+    .cw{position:relative}
+    .cb2{font-family:var(--fb);font-size:13px;color:var(--tx);background:none;border:1px solid var(--bd);border-radius:5px;padding:5px 12px;cursor:pointer;transition:all .15s}
+    .cb2:hover{border-color:var(--gd);color:var(--gd)}
+    .cd{position:absolute;right:0;top:calc(100% + 8px);background:#fff;border:1px solid var(--bd);border-radius:8px;padding:8px;min-width:220px;display:none;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+    .cd.open{display:block}
+    .ca{display:flex;align-items:center;gap:8px;padding:7px 10px;text-decoration:none;color:var(--tx);font-family:var(--fb);font-size:13px;border-radius:5px;transition:background .15s}
+    .ca:hover{background:var(--hv)}
+    .ca i{color:var(--gd);font-size:14px}
+
+    /* HERO */
+    .hm{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+    .hm::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 52% 44% at 50% 50%,rgba(250,250,248,.88) 0%,rgba(250,250,248,0) 100%);pointer-events:none;z-index:1}
+    .hc{position:relative;z-index:2}
+    .ht{font-family:var(--fm);font-size:13px;color:var(--gd);letter-spacing:.15em;text-transform:uppercase;margin-bottom:28px;opacity:0;animation:hf .8s ease .2s forwards}
+    .hh{font-family:var(--fs);font-size:72px;color:var(--tx);line-height:1;letter-spacing:-1.5px;margin-bottom:20px;font-weight:400;opacity:0;animation:hf .9s ease .5s forwards}
+    .hr{font-family:var(--fb);font-size:22px;color:var(--tx2);font-style:italic;opacity:0;animation:hf .8s ease .85s forwards}
+    .hr strong{color:var(--tx);font-style:normal;font-weight:500}
+    @keyframes hf{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .hsc{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);font-family:var(--fm);font-size:9px;color:rgba(180,120,35,.4);letter-spacing:.14em;text-transform:uppercase;z-index:2;animation:fy 3s ease-in-out infinite .8s}
+    @keyframes fy{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-5px)}}
+
+    /* SCROLL REVEAL */
+    .sr{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+    .sr.vis{opacity:1;transform:none}
+
+    /* METRICS BAR */
+    .mb{border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:20px 32px;display:flex;background:rgba(250,250,248,.92)}
+    .me{flex:1;text-align:center;padding:0 12px;border-right:1px solid var(--bd)}
+    .me:last-child{border-right:none}
+    .mv{font-family:var(--fm);font-size:20px;font-weight:700;color:var(--tx);display:block;line-height:1.2}
+    .ml{font-family:var(--fb);font-size:11px;color:var(--tx3);text-transform:uppercase;letter-spacing:.07em;margin-top:3px;display:block}
+
+    /* FEATURED */
+    .ft{margin:32px;border:1px solid var(--bd);border-radius:10px;overflow:hidden;background:#fff}
+    .fh{background:var(--gd);padding:8px 18px;display:flex;justify-content:space-between;align-items:center}
+    .fh span{font-family:var(--fm);font-size:13px;color:#fff;letter-spacing:.07em;text-transform:uppercase}
+    .fb2{padding:18px;display:flex;gap:16px;align-items:flex-start}
+    .fi{width:48px;height:48px;border-radius:8px;background:#f0ede8;border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:22px}
+    .fn{font-family:var(--fs);font-size:17px;color:var(--tx);margin-bottom:5px;font-weight:600;letter-spacing:.05em;word-spacing:.20em}
+    .fd{font-family:var(--fb);font-size:14px;color:var(--tx2);line-height:1.55;margin-bottom:10px;letter-spacing:.02em}
+    .fts{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+    .ftg{font-family:var(--fm);font-size:12px;color:var(--tx3);border:1px solid var(--bd);border-radius:3px;padding:2px 7px}
+    .fln{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+
+    /* PROJECTS */
+    .sc{padding:28px 32px 6px}
+    .st{font-family:var(--fs);font-size:24px;color:var(--tx);font-weight:400;margin-bottom:16px}
+    .pl{padding:0 32px 14px}
+    .pi{display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid var(--bd)}
+    .pi:last-child{border-bottom:none}
+    .pn{font-family:var(--fm);font-size:11px;color:var(--tx3);width:22px;flex-shrink:0;padding-top:2px}
+    .pa{font-family:var(--fb);font-size:14px;color:var(--tx);font-weight:500;margin-bottom:3px}
+    .pal{color:inherit;text-decoration:none;transition:color .15s}
+    .pal:hover{color:var(--gd)}
+    .pd{font-family:var(--fb);font-size:13px;color:var(--tx2);line-height:1.5}
+    .ps{font-family:var(--fm);font-size:11px;color:var(--gd);background:rgba(196,148,58,.08);padding:2px 7px;border-radius:3px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+
+    /* ABOUT */
+    .ss{border-top:1px solid var(--bd)}
+    .si{padding:32px 32px 0;text-align:center}
+    .sp{font-family:var(--fm);font-size:13px;color:var(--gd);letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease}
+    .si.vis .sp{opacity:1;transform:none;transition-delay:.05s}
+    .sn{font-family:var(--fm);font-size:39px;color:var(--tx);font-weight:800;letter-spacing:.08em;margin-bottom:5px;opacity:0;transform:translateY(8px);transition:opacity .55s ease,transform .55s ease}
+    .sn em{color:var(--gd);font-style:normal}
+    .si.vis .sn{opacity:1;transform:none;transition-delay:.15s}
+    .ss2{font-family:var(--fm);font-size:14px;color:var(--tx3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px;opacity:0;transition:opacity .5s ease .25s}
+    .si.vis .ss2{opacity:1}
+    .sb{font-family:var(--fm);font-size:10px;color:rgba(196,148,58,.38);letter-spacing:.06em;margin-bottom:22px;opacity:0;transition:opacity .5s ease .35s}
+    .si.vis .sb{opacity:1}
+    .sl{width:48px;height:1.5px;background:var(--gd);margin:0 auto 24px;opacity:0;transition:opacity .5s ease .4s}
+    .si.vis .sl{opacity:1}
+    /* .sbdy{display:flex;min-height:480px}*/
+	.sbdy{display:flex;align-items:stretch;}  /* ABOUT LAYOUT UPDATE */
+    /*.slt{width:318px;flex-shrink:0;padding:36px 26px 36px 32px;display:flex;flex-direction:column;justify-content:center;position:relative}*/
+	.slt{flex:1;width:50%;max-width:50%;padding:36px 40px 36px 32px;position:relative;} /* Left Text Section */
+    .slt::before{content:'';position:absolute;left:0;top:8%;bottom:8%;width:2px;background:linear-gradient(to bottom,transparent,var(--gd) 22%,var(--gd) 78%,transparent)}
+    .sdv{width:1px;flex-shrink:0;background:linear-gradient(to bottom,transparent,rgba(196,148,58,.32) 18%,rgba(196,148,58,.32) 82%,transparent)}
+    /*.srt{flex:1;position:relative;overflow:hidden;min-height:480px}*/
+	.srt{flex:1;width:50%;max-width:50%;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;} /* RIGHT IMAGE SECTION */
+    .al,.ah,.as2,.ab,.ai,.am,.at,.asc,.aph{opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
+    .sbdy.vis .al{opacity:1;transform:none;transition-delay:.06s}
+    .sbdy.vis .ah{opacity:1;transform:none;transition-delay:.2s}
+    .sbdy.vis .as2{opacity:1;transform:none;transition-delay:.34s}
+    .sbdy.vis .ab{opacity:1;transform:none;transition-delay:.46s}
+    .sbdy.vis .ai{opacity:1;transform:none;transition-delay:.58s}
+    .sbdy.vis .am{opacity:1;transform:none;transition-delay:.68s}
+    .sbdy.vis .at{opacity:1;transform:none;transition-delay:.78s}
+    .sbdy.vis .asc{opacity:1;transform:none;transition-delay:.88s}
+    .sbdy.vis .aph{opacity:1;transform:none;transition-delay:.02s}
+    .al{font-family:var(--fm);font-size:10px;color:var(--gd);letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px;margin-top:2px}
+    .ah{font-family:var(--fs);font-size:30px;color:var(--tx);line-height:1.22;letter-spacing:-.3px;font-weight:400;margin-bottom:20px}
+    .ah em{color:var(--gd);font-style:normal}
+    .as2{width:44px;height:1.5px;background:var(--gd);border-radius:1px;margin-bottom:18px}
+    .ab{font-family:var(--fb);font-size:17px.5px;color:var(--tx2);line-height:1.78;margin-bottom:12px}
+    .ab strong{color:var(--tx);font-weight:600}
+    .ag{color:var(--gd);font-family:var(--fm);font-size:13px}
+    .bc{animation:bk .85s step-end infinite;color:var(--gd)}
+    .ai{font-family:var(--fb);font-size:17px;color:var(--tx3);font-style:italic;line-height:1.72;margin-bottom:20px}
+    .am{display:flex;margin-bottom:18px}
+    .ami{flex:1;padding-right:13px;border-right:1px solid var(--bd);margin-right:13px}
+    .ami:last-child{border-right:none;margin-right:0;padding-right:0}
+    .amv{font-family:var(--fm);font-size:21px;color:var(--gd);display:block;font-weight:700;line-height:1.1}
+    .aml{font-family:var(--fm);font-size:11px;color:var(--tx3);text-transform:uppercase;letter-spacing:.09em}
+    .at{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:18px}
+    .atg{font-family:var(--fm);font-size:11px;color:var(--gd);border:1px solid rgba(196,148,58,.28);border-radius:2px;padding:3px 9px;background:rgba(196,148,58,.06);letter-spacing:.04em}
+    .asc{display:flex;gap:8px}
+    .asa{font-family:var(--fm);font-size:13px;color:var(--tx2);text-decoration:none;border:1px solid var(--bd);border-radius:3px;padding:6px 11px;display:flex;align-items:center;gap:5px;background:#fff;transition:all .15s}
+    .asa:hover{color:var(--gd);border-color:rgba(196,148,58,.4)}
+    .asa i{color:var(--gd);font-size:13px}
+
+    /* PHOTO AVATAR */
+    /*.aph{margin-bottom:16px}*/
+    /*.aph img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid rgba(196,148,58,.4);display:block}*/
+	.aph{margin-bottom:20px;display:flex;justify-content:flex-start;} /* desktop left */
+	/*.aph img{box-shadow:0 0 0 4px rgba(196,148,58,.06),0 10px 30px rgba(0,0,0,.08);}*/
+	.aph img{width:110px;height:110px;border-radius:50%;object-fit:cover;border:2px solid rgba(196,148,58,.4);display:block;}
+
+    /* CURSOR HUD */
+    .hui{position:absolute;pointer-events:none;z-index:10;font-family:var(--fm)}
+    .hs2{top:14px;right:14px;font-size:10px;color:var(--gd);display:flex;align-items:center;gap:6px;letter-spacing:.09em}
+    .hd2{width:6px;height:6px;border-radius:50%;background:var(--gd);animation:gp 2s ease infinite;box-shadow:0 0 5px rgba(196,148,58,.5)}
+    @keyframes gp{0%,100%{opacity:1}50%{opacity:.4}}
+    .htr{top:36px;right:14px;font-size:9px;color:rgba(196,148,58,.5);letter-spacing:.07em}
+    .hbt{bottom:14px;left:14px;right:14px;font-size:9px;color:rgba(17,17,17,.2);display:flex;justify-content:space-between;letter-spacing:.06em}
+    .hbk{position:absolute;pointer-events:none;z-index:8}
+    .hbk.tl{top:10px;left:10px;border-top:1.5px solid rgba(196,148,58,.28);border-left:1.5px solid rgba(196,148,58,.28);width:18px;height:18px}
+    .hbk.br{bottom:10px;right:10px;border-bottom:1.5px solid rgba(196,148,58,.28);border-right:1.5px solid rgba(196,148,58,.28);width:18px;height:18px}
+    /* #cSVG{width:100%;height:100%;display:block;min-height:480px} */
+	/*#cSVG{width:75%;height:auto;min-height:480px;transform-origin:center;}*/ /* SCALE SVG DOWN TO 75% */
+	#cSVG{width:100%;max-width:420px;height:auto;min-height:480px;transform-origin:center;}
+
+    /* SKILLS */
+    .skl{padding:6px 32px 28px;display:flex;flex-direction:column;gap:13px}
+    .sgl{font-family:var(--fm);font-size:10px;color:var(--tx3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px}
+    .chs{display:flex;flex-wrap:wrap;gap:7px}
+    .ch2{font-family:var(--fb);font-size:13px;color:var(--tx);background:#fafaf8;border:1px solid var(--bd);border-radius:20px;padding:5px 14px;transition:all .15s}
+    .ch2:hover,.ch2.hi{border-color:rgba(196,148,58,.35);color:var(--gd)}
+
+    /* CONTACT */
+    .ct{margin:0 32px 28px;border:1px solid var(--bd);border-radius:10px;padding:26px;text-align:center;background:#fff}
+    .ct h2{font-family:var(--fs);font-size:26px;color:var(--tx);font-weight:400;margin-bottom:8px}
+    .ct p{font-family:var(--fb);font-size:14px;color:var(--tx2);margin-bottom:16px}
+    .ct a.em{font-family:var(--fb);font-size:14px;color:var(--gd);text-decoration:none;border-bottom:1px solid rgba(196,148,58,.4);padding-bottom:1px;font-weight:500}
+    .ctl{display:flex;justify-content:center;gap:14px;margin-top:14px;flex-wrap:wrap}
+    .ctli{font-family:var(--fb);font-size:13px;color:var(--tx2);text-decoration:none;display:flex;align-items:center;gap:5px}
+    .ctli i{font-size:15px;color:var(--gd)}
+
+    /* FOOTER */
+    .ftr{padding:18px 32px;border-top:1px solid var(--bd);display:flex;justify-content:space-between;background:rgba(250,250,248,.9)}
+    .ftr span{font-family:var(--fb);font-size:12px;color:var(--tx3)}
+
+    /* RESPONSIVE */
+	/* mobile */
+    @media(max-width:768px){
+      .hh{font-size:42px;letter-spacing:-1px}
+      .hr{font-size:17px}
+      .hd{padding:0 16px}
+      .nl{gap:10px}
+      .nl a{font-size:12px}
+      .mb{flex-wrap:wrap;padding:14px 16px}
+      .me{min-width:33%;padding:8px 4px;border-right:none;border-bottom:1px solid var(--bd)}
+      .me:nth-child(3n),.me:last-child{border-right:none}
+      .ft{margin:16px}
+      .fb2{flex-direction:column;gap:12px}
+      .sc{padding:20px 16px 4px}
+      .pl{padding:0 16px 10px}
+	  .sbdy{flex-direction:column;min-height:auto;}
+      /*.sbdy{flex-direction:column}*/
+	  .slt{width:100% !important;max-width:100% !important;flex:none;padding:28px 20px;display:flex;flex-direction:column;justify-content:center;}
+      /*.slt{width:100%!important;padding:28px 20px}*/
+      .slt::before{display:none}
+      .sdv{display:none}
+	  .srt{width:100% !important;max-width:100% !important;flex:none;min-height:320px;display:flex;align-items:center;justify-content:center;}
+	  /*.srt{min-height:320px}*/
+      .skl{padding:4px 16px 20px}
+      .ct{margin:0 16px 20px;padding:20px 16px}
+      .ftr{flex-direction:column;gap:6px;text-align:center;padding:14px 16px}
+	  /* adding from here */
+	  .ht{font-family:var(--fm);font-size:11px;color:var(--gd);letter-spacing:.15em;text-transform:uppercase;margin-bottom:28px;opacity:0;animation:hf .8s ease .2s forwards}
+	  .hh{font-family:var(--fs);font-size:62px;color:var(--tx);line-height:1;margin-bottom:16px;font-weight:400;opacity:0;animation:hf .9s ease .5s forwards}
+      .hr{font-family:var(--fb);font-size:22px;color:var(--tx2);font-style:italic;opacity:0;animation:hf .8s ease .85s forwards}
+	  .fh span{font-family:var(--fm);font-size:11px;color:#fff;letter-spacing:.07em;text-transform:uppercase}
+	  .fd{font-family:var(--fb);font-size:13px;color:var(--tx2);line-height:1.55;margin-bottom:10px}
+	  .sp{font-family:var(--fm);font-size:9px;color:var(--gd);letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease}
+      .ss2{font-family:var(--fm);font-size:10px;color:var(--tx3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px;opacity:0;transition:opacity .5s ease .25s}
+	  .sn{font-family:var(--fm);font-size:26px;color:var(--tx);font-weight:700;letter-spacing:.08em;margin-bottom:5px;opacity:0;transform:translateY(8px);transition:opacity .55s ease,transform .55s ease}
+	  #cSVG{width:100%;max-width:100%;height:auto;min-height:320px;}
+	  .aph{justify-content:center;}
+      .aph img{width:92px;height:92px;}
+	  .al{text-align:center;}
+	  .ah,.ab,.ai{text-align:center;}
+	  .ab{font-family:var(--fb);font-size:13px;color:var(--tx2);line-height:1.78;margin-bottom:12px}
+	  .ai{font-family:var(--fb);font-size:13px;color:var(--tx3);font-style:italic;line-height:1.72;margin-bottom:20px}
+	  .as2{width:44px;height:1.5px;background:var(--gd);border-radius:1px;margin:0 auto 18px}
+	  
+	  
+    }
+    @media(max-width:600px){
+      .nl{display:none}
+      .hh{font-size:36px}
+      .hr{font-size:16px}
+      .ht{font-size:10px}
+      .si{padding:24px 16px 0}
+      .sbdy{min-height:unset}
+    }
+    @media(max-width:400px){
+      .hh{font-size:30px}
+      .me{min-width:50%}
+    }
+  </style>
+</head>
+<body>
+
+<div id="main">
+  <canvas id="cb"></canvas>
+  <div id="cl">
+
+    <header class="hd">
+      <div class="hl">
+        <!--div class="bg">HM</div-->
+		<div class="bg">
+		  <img src="assets/huzefa.JPG" alt="Huzefa">
+        </div>
+        <span class="nb">Huzefa<span class="cu">|</span></span>
+      </div>
+      <ul class="nl">
+        <li><a onclick="go('hero')">Home</a></li>
+        <li><a onclick="go('proj')">Projects</a></li>
+        <li><a class="sg" onclick="go('orig')">About</a></li>
+        <li><a onclick="go('skil')">Skills</a></li>
+        <li><a onclick="go('cont')">Contact</a></li>
+      </ul>
+      <div class="cw">
+        <button class="cb2" onclick="tC()">Connect</button>
+        <div class="cd" id="cdd">
+          <a class="ca" href="https://github.com/huzefa10" target="_blank" rel="noopener">
+            <i class="ti ti-brand-github"></i>github.com/huzefa10
+          </a>
+          <a class="ca" href="https://linkedin.com/in/huzefa-merchant" target="_blank" rel="noopener">
+            <i class="ti ti-brand-linkedin"></i>linkedin.com/in/huzefa-merchant
+          </a>
+          <a class="ca" href="https://kaggle.com/huzefamerchant" target="_blank" rel="noopener">
+            <i class="ti ti-chart-dots"></i>kaggle.com/huzefamerchant
+          </a>
+          <a class="ca" href="mailto:huzefamerchant10@gmail.com">
+            <i class="ti ti-mail"></i>huzefamerchant10@gmail.com
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hm" id="hero">
+      <div class="hc">
+        <p class="ht">// ML Engineer &nbsp;·&nbsp; GenAI &nbsp;·&nbsp; Multimodal AI &nbsp;·&nbsp; Computer Vision</p>
+        <h1 class="hh">Hey, I'm Huzefa</h1>
+        <p class="hr">Rebuilt the same ML system <strong>6 times</strong> to get it right.</p>
+      </div>
+      <span class="hsc">scroll &darr;</span>
+    </section>
+
+    <!-- METRICS BAR -->
+    <div class="mb sr">
+      <div class="me"><span class="mv">0.1341</span><span class="ml">BLEU-4</span></div>
+      <div class="me"><span class="mv">97.62%</span><span class="ml">Accuracy</span></div>
+      <div class="me"><span class="mv">1.00</span><span class="ml">Precision</span></div>
+      <div class="me"><span class="mv">0.916</span><span class="ml">R² Score</span></div>
+      <div class="me"><span class="mv">8</span><span class="ml">Projects</span></div>
+    </div>
+
+    <!-- FEATURED: LensToWords -->
+    <div class="ft sr">
+      <div class="fh">
+        <span>★ Featured Project</span>
+        <span>LensToWords</span>
+      </div>
+      <div class="fb2">
+        <div class="fi">📷</div>
+        <div>
+          <div class="fn">LensToWords — Image Captioning through 7 Architecture Iterations</div>
+          <div class="fd">
+            7 rewrites: CNN-LSTM → InceptionV3 + Attention → ConvNeXt + Perceiver + Cross-Attention + GPT-2.
+            Trained on Flickr30k + MSCOCO. BLEU-4: 0.1341. Each failure was a deliberate architectural decision.
+          </div>
+          <div class="fts">
+            <span class="ftg">PyTorch</span>
+            <span class="ftg">ConvNeXt</span>
+            <span class="ftg">Perceiver</span>
+            <span class="ftg">Cross-Attention</span>
+            <span class="ftg">GPT-2</span>
+            <span class="ftg">MSCOCO</span>
+          </div>
+          <div class="fln">
+            <a class="asa" href="https://github.com/huzefa10/LensToWords" target="_blank" rel="noopener">
+              <i class="ti ti-brand-github"></i>GitHub
+            </a>
+            <a class="asa" href="https://www.kaggle.com/huzefamerchant/lenstowords-convnext-perceiver-gpt-2-image-c" target="_blank" rel="noopener">
+              <i class="ti ti-chart-dots"></i>Kaggle
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECTS LIST -->
+    <div class="sc sr" id="proj"><h2 class="st">Projects</h2></div>
+    <div class="pl sr">
+      <div class="pi">
+        <span class="pn">01</span>
+        <div>
+          <div class="pa">
+            <a class="pal" href="https://github.com/huzefa10/potato-disease-detector" target="_blank" rel="noopener">Potato Disease Detector</a>
+          </div>
+          <div class="pd">Custom CNN + FastAPI + Streamlit pipeline for potato leaf disease detection. 3 classes.</div>
+        </div>
+        <span class="ps">97.62% Acc</span>
+      </div>
+      <div class="pi">
+        <span class="pn">02</span>
+        <div>
+          <div class="pa">
+            <a class="pal" href="https://github.com/huzefa10/whatsapp-chat-analyser" target="_blank" rel="noopener">WhatsApp Chat Analyser</a>
+          </div>
+          <div class="pd">Analytics dashboard for WhatsApp exports. Hinglish NLP, emoji analytics, temporal behaviour modelling.</div>
+        </div>
+        <span class="ps">Hinglish NLP</span>
+      </div>
+      <div class="pi">
+        <span class="pn">03</span>
+        <div>
+          <div class="pa">
+            <a class="pal" href="https://github.com/huzefa10/fashion-recommender" target="_blank" rel="noopener">Fashion Recommender</a>
+          </div>
+          <div class="pd">Visual fashion recommendation using ResNet50 features + cosine similarity.</div>
+        </div>
+        <span class="ps">ResNet50</span>
+      </div>
+      <div class="pi">
+        <span class="pn">04</span>
+        <div>
+          <div class="pa">
+            <a class="pal" href="https://github.com/huzefa10/sms-spam-classifier" target="_blank" rel="noopener">SMS Spam Classifier</a>
+          </div>
+          <div class="pd">13 classifiers benchmarked. VotingClassifier ensemble. Zero false positives.</div>
+        </div>
+        <span class="ps">Precision=1.0</span>
+      </div>
+      <div class="pi">
+        <span class="pn">05</span>
+        <div>
+          <div class="pa">
+            <a class="pal" href="https://github.com/huzefa10/laptop-price-predictor" target="_blank" rel="noopener">Laptop Price Predictor</a>
+          </div>
+          <div class="pd">VotingRegressor ensemble (RF + GBM + ExtraTree) on hardware specification data.</div>
+        </div>
+        <span class="ps">R²=0.916</span>
+      </div>
+      <div class="pi">
+        <span class="pn">06</span>
+        <div>
+          <div class="pa">
+            <a class="pal" href="https://github.com/huzefa10/bollywood-celebrity-predictor" target="_blank" rel="noopener">Bollywood Celebrity Predictor</a>
+          </div>
+          <div class="pd">Face recognition using DeepFace + VGG-Face + MTCNN across 100 celebrities.</div>
+        </div>
+        <span class="ps">100 celebs</span>
+      </div>
+      <div class="pi">
+        <span class="pn">07</span>
+        <div>
+          <div class="pa">
+            <a class="pal" href="https://github.com/huzefa10/movie-recommender_deploy" target="_blank" rel="noopener">Movie Recommender System</a>
+          </div>
+          <div class="pd">Content-based recommendation on TMDB 5000. CountVectorizer + cosine similarity. Deployed on Streamlit.</div>
+        </div>
+        <span class="ps">Deployed ↗</span>
+      </div>
+    </div>
+
+    <!-- ABOUT (ABOUT) -->
+    <section class="ss" id="orig">
+      <div class="si" id="sI">
+        <div class="sp">// 005 &nbsp;·&nbsp; Identity Protocol</div>
+        <!-- div class="sn">SIGNAL<em>_</em>ORIGIN</div-->
+		<div class="sn">ABOUT</div>
+        <div class="ss2">Identity &nbsp;·&nbsp; Architecture &nbsp;·&nbsp; Process</div>
+        <div class="sb">&gt; LOADING: IDENTITY_MODULE<span class="bc">_</span></div>
+        <div class="sl"></div>
+      </div>
+      <div class="sbdy" id="sB">
+        <div class="slt">
+          <div class="aph">
+            <img src="assets/huzefa.JPG" alt="Huzefa Merchant — ML Engineer">
+          </div>
+          <div class="al">ABOUT</div>
+          <!--h2 class="ah">I build ML systems<br>— then rebuild them<br>until they're<br><em>actually good.</em></h2-->
+		  <h2 class="ah">I build ML systems that <em>actually work.</em></h2>
+          <div class="as2"></div>
+          <!--p class="ab">LensToWords took <strong>7 architectural rewrites</strong><br>to reach BLEU&#8209;4:&nbsp;<span class="ag">0.1341</span>.<br>That's the process.<span class="bc">_</span></p-->
+		  <!--p class="ab">LensToWords took <strong>7 architectural rewrites</strong> to reach BLEU&#8209;4:&nbsp;<span class="ag">0.1341</span>.<br>That's the process.<span class="bc">_</span></p-->
+          <!--p class="ai">Currently exploring GenAI, Multimodal AI, and Computer Vision.<br>Open to roles anywhere in the world.</p-->
+		  <p class="ab">Deep learning systems that go all the way — from architecture decisions to production output, not just notebooks that run on clean data.<br>My work spans <strong>Generative AI, Multimodal AI, Computer Vision, and Recommendation Systems</strong>. I go deep on one problem until the output is right, not until the metrics look good.<br>Spent the last year <strong>rebuilding</strong> the same image captioning system <strong>seven times</strong> — each time because I hit the ceiling and needed to understand why. That's how I approach everything.<span class="bc">_</span></p>
+          <p class="ai"><strong>Open to roles, collaborations, and interesting problems — anywhere in the world.</strong></p>
+		  <div class="am">
+            <div class="ami"><span class="amv">0.1341</span><span class="aml">BLEU&#8209;4</span></div>
+            <div class="ami"><span class="amv">7×</span><span class="aml">Iterations</span></div>
+            <div class="ami"><span class="amv">8</span><span class="aml">Projects</span></div>
+          </div>
+          <div class="at">
+            <span class="atg">GenAI</span>
+            <span class="atg">Multimodal AI</span>
+            <span class="atg">Computer Vision</span>
+          </div>
+          <div class="asc">
+            <a class="asa" href="https://github.com/huzefa10" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>GitHub</a>
+            <a class="asa" href="https://linkedin.com/in/huzefa-merchant" target="_blank" rel="noopener"><i class="ti ti-brand-linkedin"></i>LinkedIn</a>
+            <a class="asa" href="https://kaggle.com/huzefamerchant" target="_blank" rel="noopener"><i class="ti ti-chart-dots"></i>Kaggle</a>
+          </div>
+        </div>
+        <div class="sdv"></div>
+        <div class="srt">
+          <div class="hbk tl"></div><div class="hbk br"></div>
+          <div class="hui hs2"><span class="hd2"></span>CURSOR&nbsp;TRACKING</div>
+          <div class="hui htr" id="htr">EYE&nbsp;&nbsp;X:—&nbsp;&nbsp;Y:—</div>
+          <div class="hui hbt"><span>HM_ENGINEER_001</span><span id="hclk">——:——:——</span></div>
+          <svg id="cSVG" viewBox="0 0 362 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <radialGradient id="dg" cx="50%" cy="70%" r="52%"><stop offset="0%" stop-color="#C4943A" stop-opacity=".07"/><stop offset="100%" stop-color="#C4943A" stop-opacity="0"/></radialGradient>
+              <radialGradient id="mg" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#00C89A" stop-opacity=".18"/><stop offset="100%" stop-color="#00C89A" stop-opacity="0"/></radialGradient>
+              <clipPath id="hc"><ellipse cx="181" cy="212" rx="60" ry="68"/></clipPath>
+              <filter id="gf" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <path d="M16 86 L56 86 L66 76 L186 76" stroke="rgba(196,148,58,.14)" stroke-width="1" fill="none"/><circle cx="56" cy="86" r="2.5" fill="rgba(196,148,58,.22)"/>
+            <path d="M346 428 L320 428 L308 440 L178 440" stroke="rgba(196,148,58,.11)" stroke-width="1" fill="none"/><circle cx="320" cy="428" r="2.5" fill="rgba(196,148,58,.2)"/>
+            <text x="12" y="44" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(180,120,35,.10)">import torch</text>
+            <text x="12" y="57" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(180,120,35,.07)">BLEU_4 = 0.1341</text>
+            <text x="198" y="52" font-family="IBM Plex Mono,monospace" font-size="8" fill="rgba(180,120,35,.09)">attention(Q,K,V)</text>
+            <text x="12" y="482" font-family="IBM Plex Mono,monospace" font-size="8" fill="rgba(180,120,35,.08)">model.fit(X_train)</text>
+            <rect x="111" y="108" width="140" height="13" rx="6.5" fill="#1E2D3E"/>
+            <path d="M107 304 Q85 318 81 358 L81 420 L125 420 L117 326 Z" fill="#1E2D3E"/>
+            <path d="M255 304 Q277 318 281 358 L281 420 L237 420 L245 326 Z" fill="#1E2D3E"/>
+            <path d="M111 295 Q89 301 75 341 Q65 381 69 448 L293 448 Q297 381 287 341 Q273 301 251 295 L219 285 Q201 280 181 280 Q161 280 143 285 Z" fill="#1E2D3E"/>
+            <path d="M143 295 Q139 271 147 253 L161 259 L155 291 Z" fill="#263647" opacity=".8"/>
+            <path d="M219 295 Q223 271 215 253 L201 259 L207 291 Z" fill="#263647" opacity=".8"/>
+            <path d="M159 284 Q169 294 181 296 Q193 294 203 284 L199 274 Q191 282 181 283 Q171 282 163 274 Z" fill="#FAFAF8"/>
+            <path d="M144 342 Q181 352 218 342 L214 386 Q181 391 148 386 Z" fill="#182535" opacity=".55"/>
+            <text x="181" y="372" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(196,148,58,.22)" text-anchor="middle">{ ml }</text>
+            <rect x="165" y="261" width="32" height="28" rx="7" fill="#C07840"/>
+            <ellipse cx="120" cy="220" rx="9" ry="13" fill="#B07030"/><ellipse cx="120" cy="220" rx="5" ry="8" fill="#9A6020"/>
+            <ellipse cx="242" cy="220" rx="9" ry="13" fill="#B07030"/><ellipse cx="242" cy="220" rx="5" ry="8" fill="#9A6020"/>
+            <ellipse cx="181" cy="212" rx="60" ry="68" fill="#C57840"/>
+            <ellipse cx="181" cy="158" rx="60" ry="56" fill="#1A0E00" clip-path="url(#hc)"/>
+            <ellipse cx="181" cy="150" rx="36" ry="22" fill="#0E0800" clip-path="url(#hc)"/>
+            <path d="M146 204 Q157 197 171 202" stroke="#1A0E00" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+            <path d="M191 202 Q205 197 216 204" stroke="#1A0E00" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+            <ellipse cx="159" cy="220" rx="17" ry="15" fill="#A86020" opacity=".22"/>
+            <ellipse cx="203" cy="220" rx="17" ry="15" fill="#A86020" opacity=".22"/>
+            <ellipse id="lEB" cx="159" cy="220" rx="13" ry="12" fill="#F5F0E8"/>
+            <ellipse id="rEB" cx="203" cy="220" rx="13" ry="12" fill="#F5F0E8"/>
+            <circle cx="159" cy="220" r="8" fill="#2A1C0E"/><circle cx="203" cy="220" r="8" fill="#2A1C0E"/>
+            <circle id="lP" cx="159" cy="220" r="5.2" fill="#050402"/>
+            <circle id="rP" cx="203" cy="220" r="5.2" fill="#050402"/>
+            <circle id="lS" cx="161" cy="217" r="2.2" fill="white" opacity=".9"/>
+            <circle id="rS" cx="205" cy="217" r="2.2" fill="white" opacity=".9"/>
+            <path d="M174 234 Q178 242 181 243 Q184 242 188 234" stroke="#A06028" stroke-width="1.5" fill="none" opacity=".48"/>
+            <path d="M169 254 Q175 258 181 257 Q187 258 193 254" stroke="#8A3C0A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <g filter="url(#gf)">
+              <rect x="140" y="211" width="36" height="21" rx="10" fill="none" stroke="#C4943A" stroke-width="2.2"/>
+              <rect x="184" y="211" width="36" height="21" rx="10" fill="none" stroke="#C4943A" stroke-width="2.2"/>
+              <line x1="176" y1="221" x2="184" y2="221" stroke="#C4943A" stroke-width="2" stroke-linecap="round"/>
+              <line x1="140" y1="221" x2="125" y2="218" stroke="#C4943A" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="220" y1="221" x2="235" y2="218" stroke="#C4943A" stroke-width="1.8" stroke-linecap="round"/>
+            </g>
+            <rect x="142" y="213" width="32" height="17" rx="9" fill="rgba(196,148,58,.06)"/>
+            <rect x="186" y="213" width="32" height="17" rx="9" fill="rgba(196,148,58,.06)"/>
+            <rect x="68" y="330" width="228" height="16" rx="3" fill="#0C1E30"/>
+            <text x="78" y="341" font-family="IBM Plex Mono,monospace" font-size="7" fill="rgba(0,200,154,.65)">BLEU_4=0.1341 &gt; model.fit(X_train)</text>
+            <rect x="64" y="344" width="236" height="14" rx="3" fill="#162840" stroke="rgba(0,200,154,.32)"/>
+            <line x1="64" y1="344" x2="300" y2="344" stroke="rgba(0,200,154,.48)" stroke-width="1.5"/>
+            <ellipse cx="181" cy="345" rx="120" ry="20" fill="url(#mg)"/>
+            <rect x="79" y="357" width="206" height="33" rx="5" fill="#162535" stroke="rgba(196,148,58,.2)"/>
+            <rect x="87" y="364" width="190" height="6" rx="2" fill="#1E3050"/>
+            <rect x="87" y="374" width="190" height="5" rx="2" fill="#1E3050"/>
+            <rect x="79" y="387" width="206" height="3" rx="1.5">
+              <animate attributeName="fill" values="#C4943A;#6066AA;#C4943A" dur="5s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values=".5;.25;.5" dur="5s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="0" y="387" width="362" height="18" fill="#1A2535"/>
+            <line x1="0" y1="385" x2="362" y2="385" stroke="rgba(196,148,58,.32)" stroke-width="1.2"/>
+            <rect x="298" y="357" width="36" height="30" rx="4" fill="#162535" stroke="rgba(196,148,58,.2)"/>
+            <rect x="304" y="363" width="24" height="18" rx="3" fill="#0C1828"/>
+            <path d="M310 357 Q312 348 308 340" stroke="rgba(100,80,40,.14)" stroke-width="1.5" fill="none"/>
+            <ellipse cx="181" cy="415" rx="175" ry="55" fill="url(#dg)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <div class="sc sr" id="skil"><h2 class="st">Skills</h2></div>
+    <div class="skl sr">
+      <div>
+        <div class="sgl">Deep Learning</div>
+        <div class="chs">
+          <span class="ch2 hi">PyTorch</span>
+          <span class="ch2 hi">TensorFlow</span>
+          <span class="ch2">Keras</span>
+          <span class="ch2">Transformers</span>
+          <span class="ch2">CNNs</span>
+        </div>
+      </div>
+      <div>
+        <div class="sgl">Computer Vision</div>
+        <div class="chs">
+          <span class="ch2 hi">ConvNeXt</span>
+          <span class="ch2">ResNet50</span>
+          <span class="ch2">DeepFace</span>
+          <span class="ch2">MTCNN</span>
+          <span class="ch2">timm</span>
+          <span class="ch2">OpenCV</span>
+        </div>
+      </div>
+      <div>
+        <div class="sgl">NLP &amp; GenAI</div>
+        <div class="chs">
+          <span class="ch2 hi">Multimodal AI</span>
+          <span class="ch2 hi">Hugging Face</span>
+          <span class="ch2">GPT-2</span>
+          <span class="ch2">Perceiver</span>
+          <span class="ch2">LLMs</span>
+        </div>
+      </div>
+      <div>
+        <div class="sgl">Stack &amp; Tools</div>
+        <div class="chs">
+          <span class="ch2">Python</span>
+          <span class="ch2">FastAPI</span>
+          <span class="ch2">Streamlit</span>
+          <span class="ch2">Scikit-learn</span>
+          <span class="ch2">Pandas</span>
+          <span class="ch2">Jupyter</span>
+          <span class="ch2">Git</span>
+          <span class="ch2">Linux</span>
+          <span class="ch2">Kaggle</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="ct sr" id="cont">
+      <h2>Let's build something.</h2>
+      <p>Open to ML Engineering, Applied AI, and Research roles — anywhere in the world.</p>
+      <a class="em" href="mailto:huzefamerchant10@gmail.com">huzefamerchant10@gmail.com →</a>
+      <div class="ctl">
+        <a class="ctli" href="https://github.com/huzefa10" target="_blank" rel="noopener">
+          <i class="ti ti-brand-github"></i>GitHub
+        </a>
+        <a class="ctli" href="https://linkedin.com/in/huzefa-merchant" target="_blank" rel="noopener">
+          <i class="ti ti-brand-linkedin"></i>LinkedIn
+        </a>
+        <a class="ctli" href="https://kaggle.com/huzefamerchant" target="_blank" rel="noopener">
+          <i class="ti ti-chart-dots"></i>Kaggle
+        </a>
+      </div>
+    </div>
+
+    <div class="ftr">
+      <span>Made by Huzefa &nbsp;·&nbsp; &copy; 2026</span>
+      <span style="color:var(--gd);font-family:var(--fm);font-size:11px">ML Engineer</span>
+    </div>
+
+  </div><!-- #cl -->
+</div><!-- #main -->
+
+<script>
+/* Smooth scroll nav */
+function go(id){
+  const e=document.getElementById(id);
+  if(e) window.scrollTo({top:e.getBoundingClientRect().top+window.scrollY-52,behavior:'smooth'});
+}
+
+/* Connect dropdown toggle */
+function tC(){document.getElementById('cdd').classList.toggle('open');}
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.cw'))document.getElementById('cdd').classList.remove('open');
+});
+
+/* Linen code background */
+const CODE=[
+  ['import numpy as np','X_train, X_test','model.fit(X,y)','accuracy=0.9762','epoch=50/50','from sklearn','batch_size=32','val_accuracy','confusion_matrix','cross_val_score'],
+  ['import tensorflow as tf','Sequential()','model.compile(adam)','BLEU_4=0.1341','Dense(256,relu)','attention_weights','encoder_output','beam_search(k=3)','tokenizer.fit()','mscoco_80k'],
+  ['import torch','nn.Linear(512,256)','F.softmax(x,1)','optimizer.step()','val_loss=0.234','torch.sigmoid(x)','model.eval()','loss.backward()','DataLoader()','transforms.Normalize'],
+  ['import cv2','ResNet50(imagenet)','deepface.analyze()','precision=1.00','R2_score=0.916','face_embedding[]','knn.fit(X_emb)','cosine_sim(a,b)','TfidfVectorizer()','naive_bayes.fit'],
+  ['from nltk import','stopwords.words()','cosine_similarity','MultinomialNB()','vectorizer.fit()','GridSearchCV()','VotingRegressor()','XGBRegressor()','recall_score()','f1_score()'],
+];
+const COLS=[{x:6,op:0.072},{x:142,op:0.095},{x:278,op:0.058},{x:414,op:0.095},{x:550,op:0.072}];
+function drawCode(){
+  const cv=document.getElementById('cb'),layer=document.getElementById('cl');
+  if(!cv||!layer)return;
+  cv.width=Math.max(window.innerWidth,680);
+  cv.height=Math.max(layer.scrollHeight,document.body.scrollHeight,3200);
+  cv.style.width=cv.width+'px';
+  cv.style.height=cv.height+'px';
+  const ctx=cv.getContext('2d');
+  ctx.clearRect(0,0,cv.width,cv.height);
+  COLS.forEach((col,ci)=>{
+    ctx.font=`10px 'IBM Plex Mono',monospace`;
+    ctx.fillStyle=`rgba(180,120,35,${col.op})`;
+    const lines=CODE[ci],off=ci*3;
+    let y=10+(ci%2===0?0:28);
+    while(y<cv.height+19){ctx.fillText(lines[(off+Math.floor(y/19))%lines.length],col.x,y);y+=19;}
+  });
+}
+setTimeout(drawCode,150);
+window.addEventListener('resize',()=>setTimeout(drawCode,100));
+
+/* Scroll reveal — uses viewport as root */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});
+},{root:null,threshold:0.1});
+document.querySelectorAll('.sr').forEach(el=>obs.observe(el));
+['sI','sB'].forEach(id=>{const el=document.getElementById(id);if(el)obs.observe(el);});
+
+/* Eye tracking */
+const LEX=159,LEY=220,REX=203,REY=220,MX=3.4,LR=0.072;
+let tLx=0,tLy=0,tRx=0,tRy=0,cLx=0,cLy=0,cRx=0,cRy=0;
+function eOff(ecx,ecy,mx,my,r){
+  const sc=Math.min(r.width/362,r.height/520),ox=(r.width-362*sc)/2,oy=(r.height-520*sc)/2;
+  const dx=(mx-r.left-ox)/sc-ecx,dy=(my-r.top-oy)/sc-ecy;
+  const a=Math.atan2(dy,dx),t=Math.min(MX,Math.sqrt(dx*dx+dy*dy)*0.036);
+  return{x:Math.cos(a)*t,y:Math.sin(a)*t};
+}
+document.addEventListener('mousemove',e=>{
+  const svg=document.getElementById('cSVG');if(!svg)return;
+  const r=svg.getBoundingClientRect();
+  const l=eOff(LEX,LEY,e.clientX,e.clientY,r),rr=eOff(REX,REY,e.clientX,e.clientY,r);
+  tLx=l.x;tLy=l.y;tRx=rr.x;tRy=rr.y;
+  const h=document.getElementById('htr');
+  if(h)h.textContent=`EYE  X:${Math.round(e.clientX)}  Y:${Math.round(e.clientY)}`;
+});
+function lerp(a,b,t){return a+(b-a)*t}
+let lb=0,nb=3400+Math.random()*3200;
+function aRy(el,f,t,d,cb){
+  const s=performance.now();
+  (function step(n){
+    const p=Math.min(1,(n-s)/d),e=p<.5?2*p*p:1-2*(1-p)*(1-p);
+    el.setAttribute('ry',f+(t-f)*e);
+    p<1?requestAnimationFrame(step):cb&&cb();
+  })(performance.now());
+}
+function blink(){
+  const l=document.getElementById('lEB'),r=document.getElementById('rEB');
+  if(l&&r){aRy(l,12,1,60,()=>aRy(l,1,12,80));aRy(r,12,1,60,()=>aRy(r,1,12,80));}
+}
+function frame(now){
+  cLx=lerp(cLx,tLx,LR);cLy=lerp(cLy,tLy,LR);cRx=lerp(cRx,tRx,LR);cRy=lerp(cRy,tRy,LR);
+  const lP=document.getElementById('lP'),rP=document.getElementById('rP');
+  const lS=document.getElementById('lS'),rS=document.getElementById('rS');
+  if(lP){lP.setAttribute('cx',LEX+cLx);lP.setAttribute('cy',LEY+cLy);}
+  if(rP){rP.setAttribute('cx',REX+cRx);rP.setAttribute('cy',REY+cRy);}
+  if(lS){lS.setAttribute('cx',LEX+cLx+2);lS.setAttribute('cy',LEY+cLy-3);}
+  if(rS){rS.setAttribute('cx',REX+cRx+2);rS.setAttribute('cy',REY+cRy-3);}
+  if(!lb)lb=now;
+  if(now-lb>nb){blink();lb=now;nb=3000+Math.random()*4200;}
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+/* Live clock */
+(function tick(){
+  const e=document.getElementById('hclk');
+  if(e){const d=new Date;e.textContent=[d.getHours(),d.getMinutes(),d.getSeconds()].map(v=>String(v).padStart(2,'0')).join(':');}
+  setTimeout(tick,1000);
+})();
+</script>
+</body>
+</html>
